@@ -2,7 +2,8 @@
 
 一个轮播控件
 
-![](ScreenShot/2017-06-23 12_52_03.gif)
+
+![](https://github.com/keleyundou/RTRunLoopBannerDemo/blob/master/ScreenShot/2017-06-23%2012_52_03.gif)
 
 ## Usage
 
