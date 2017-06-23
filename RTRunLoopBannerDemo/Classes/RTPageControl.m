@@ -27,7 +27,7 @@
     CGFloat marginX = _dotSize + _dotSpacing;
     
     //计算整个pageControll的宽度
-    CGFloat newW = [self widthForPageControl];
+    CGFloat newW = [self widthForPageControl:self.numberOfPages];
     
     //设置新frame
     frame = CGRectMake(frame.origin.x, frame.origin.y, newW, frame.size.height);
@@ -60,11 +60,11 @@
     _dotSpacing = dotSpacing;
 }
 
-- (CGFloat)widthForPageControl {
-    if (self.numberOfPages == 0) {
+- (CGFloat)widthForPageControl:(NSInteger)numberOfPages {
+    if (numberOfPages == 0) {
         return 0;
     }
-    return (self.subviews.count) * (_dotSize + _dotSpacing) - _dotSpacing;
+    return numberOfPages * (_dotSize + _dotSpacing) - _dotSpacing;
 }
 
 

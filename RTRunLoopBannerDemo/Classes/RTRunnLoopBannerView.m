@@ -183,16 +183,20 @@
 
 - (void)setPageControlPos:(RTPageControlShowPosition)pageControlPos {
     _pageControlPos = pageControlPos;
+    rt_pageCount = [[_dataSource dataSourceInRunLoopBannerView:self] count];
+    if (!rt_pageCount) {
+        return;
+    }
     CGRect pageControlFrame = CGRectZero;
     switch (pageControlPos) {
         case RTPageControlShowPositionBottomLeft:
             pageControlFrame = CGRectMake(10, CGRectGetMaxY(self.rt_contentScrollView.frame)-30, 0, 30);
             break;
         case RTPageControlShowPositionBottomCenter:
-            pageControlFrame = CGRectMake(self.center.x-[_rt_pageControl widthForPageControl]*0.5, CGRectGetMaxY(self.rt_contentScrollView.frame)-30, 0, 30);
+            pageControlFrame = CGRectMake(self.center.x-[_rt_pageControl widthForPageControl:rt_pageCount]*0.5, CGRectGetMaxY(self.rt_contentScrollView.frame)-30, 0, 30);
             break;
         case RTPageControlShowPositionBottomRight:
-            pageControlFrame = CGRectMake(rt_width-[_rt_pageControl widthForPageControl]-10, CGRectGetMaxY(self.rt_contentScrollView.frame)-30, 0, 30);
+            pageControlFrame = CGRectMake(rt_width-[_rt_pageControl widthForPageControl:rt_pageCount]-10, CGRectGetMaxY(self.rt_contentScrollView.frame)-30, 0, 30);
             break;
         case RTPageControlShowPositionCustom:
             if (_delegate && [_delegate respondsToSelector:@selector(customPageControlPostionWithBannerView:)]) {
@@ -297,6 +301,13 @@
 - (void)stop {
     rt_doStop = YES;
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(next) object:nil];
+}
+
+- (void)reloadData {
+    [self setDataSource:_dataSource];
+    [self setDelegate:_delegate];
+    [self setPageControlPos:_pageControlPos];
+    [self start];
 }
 
 - (UIScrollView *)rt_contentScrollView {

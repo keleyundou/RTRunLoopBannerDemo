@@ -56,5 +56,7 @@ typedef NS_ENUM(NSUInteger, RTRunLoopBannerViewShowState) {
 - (void)start;
 - (void)stop;
 
+- (void)reloadData;
+
 @end
 

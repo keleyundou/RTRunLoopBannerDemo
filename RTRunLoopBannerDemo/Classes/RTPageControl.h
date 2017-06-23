@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RTPageControl : UIPageControl
-- (CGFloat)widthForPageControl;
+- (CGFloat)widthForPageControl:(NSInteger)numberOfPages;
 @property (nonatomic, assign) CGFloat dotSize;// value > 0
 @property (nonatomic, assign) CGFloat dotSpacing;// value > 0
 @end
