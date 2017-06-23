@@ -3,7 +3,7 @@
 一个轮播控件
 
 
-![](https://github.com/keleyundou/RTRunLoopBannerDemo/blob/master/ScreenShot/2017-06-23%2012_52_03.gif)
+<img src="https://github.com/keleyundou/RTRunLoopBannerDemo/blob/master/ScreenShot/2017-06-23%2012_52_03.gif" width="422" height="708" />
 
 ## Usage
 
