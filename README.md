@@ -40,5 +40,12 @@
     return (CGRect){10,0,0,30};
 }
 
+- (CGFloat)dotSize {
+    return 10;
+}
+
+- (CGFloat)dotHorizontalSpacing {
+    return 10;
+}
 
 ```
