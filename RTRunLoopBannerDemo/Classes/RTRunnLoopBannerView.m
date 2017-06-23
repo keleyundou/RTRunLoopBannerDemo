@@ -160,6 +160,17 @@
     
 }
 
+- (void)setDelegate:(id<RTRunLoopBannerViewDelegate>)delegate {
+    _delegate = delegate;
+    if (_delegate && [_delegate respondsToSelector:@selector(dotSize)]) {
+        _rt_pageControl.dotSize = [_delegate dotSize];
+    }
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(dotHorizontalSpacing)]) {
+        _rt_pageControl.dotSpacing = [delegate dotHorizontalSpacing];
+    }
+}
+
 - (void)setPageIndicatorTintColor:(UIColor *)pageIndicatorTintColor {
     _pageIndicatorTintColor = pageIndicatorTintColor;
     _rt_pageControl.pageIndicatorTintColor = pageIndicatorTintColor;
@@ -309,6 +320,8 @@
         _rt_pageControl.currentPageIndicatorTintColor = _currentPageIndicatorTintColor;
         _rt_pageControl.numberOfPages = rt_pageCount;
         _rt_pageControl.userInteractionEnabled = NO;
+        _rt_pageControl.dotSize = [_delegate dotSize];
+        _rt_pageControl.dotSpacing = [_delegate dotHorizontalSpacing];
     }
     return _rt_pageControl;
 }

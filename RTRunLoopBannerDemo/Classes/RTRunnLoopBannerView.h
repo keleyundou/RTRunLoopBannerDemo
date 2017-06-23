@@ -35,8 +35,8 @@ typedef NS_ENUM(NSUInteger, RTRunLoopBannerViewShowState) {
 @optional
 - (void)bannerView:(RTRunnLoopBannerView *_Nullable)bannerView didSelectedImageAtIndex:(NSInteger)index;
 - (CGRect)customPageControlPostionWithBannerView:(RTRunnLoopBannerView *_Nullable)bannerView;//待优化
-//- (CGFloat)dotSize;///< 点大小
-//- (CGFloat)dotMagrin;///< 点与点水平间距
+- (CGFloat)dotSize;///< 点大小
+- (CGFloat)dotHorizontalSpacing;///< 点与点水平间距
 @end
 
 @interface RTRunnLoopBannerView : UIView

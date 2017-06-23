@@ -10,4 +10,6 @@
 
 @interface RTPageControl : UIPageControl
 - (CGFloat)widthForPageControl;
+@property (nonatomic, assign) CGFloat dotSize;// value > 0
+@property (nonatomic, assign) CGFloat dotSpacing;// value > 0
 @end

@@ -6,7 +6,6 @@ target 'RTRunLoopBannerDemo' do
   # use_frameworks!
 
   # Pods for RTRunLoopBannerDemo
-#  pod 'AFNetworking', '~> 3.1.0', :subspecs => ['Serialization', 'Security', 'NSURLSession']
   pod 'SDWebImage', '~> 4.0.0'
   
   target 'RTRunLoopBannerDemoTests' do
