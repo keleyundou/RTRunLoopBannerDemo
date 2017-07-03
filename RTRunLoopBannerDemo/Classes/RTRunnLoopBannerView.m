@@ -295,7 +295,7 @@
 
 - (void)start {
     rt_doStop = NO;
-    [self autoRunloop];
+//    [self autoRunloop];
 }
 
 - (void)stop {
